@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+.esconde-alert {
+	display: none;
+}
+
+.opacity-area {
+    position: absolute;
+    left: 0;
+    background: #000;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+}
+
+#resultado-pesquisa, 
+#conteudo-resultado-pequisa-repos,
+#conteudo-resultado-pequisa-starred {
+	display: none;
+}
+
+

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+	<meta charset="utf-8">
+	<title>Desafio Front - Bootstrap e jQuery</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+</head>
+<body class="bg-light">
+	<header>
+		<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+			<a class="navbar-brand" href="index.html">DESAFIO FRONT</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+		</nav>
+	</header>
+	<main>
+		<div class="container mt-5 card pt-3 pb-3" id="container-pesquisa">
+			<h2 class="text-center mb-5">Pesquisar usuário no GitHub</h2>
+			<div class="alert alert-danger esconde-alert" role="alert" id="esconde-alert">
+			 	Preencha os campos
+				<button type="button" class="close" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<form id="form-pesquisa-usuario">
+				<div class="form-group">
+					<label for="usuario">Nome do usuário</label>
+					<input type="text" class="form-control" name="usuario" id="usuario" aria-describedby="user for search" placeholder="Preencha o campo com o nome do usuário do GitHub" maxlength="255">
+				</div>
+				<button type="submit" class="btn btn-primary float-right">Pesquisar</button>
+			</form>
+		</div>
+		<div id="resultado-pesquisa">
+			<div class="container mt-5 card pt-3 pb-3">
+				<h3 class="text-primary">Dados do usuário <span id="usuario-github" class="text-success"></span> no Github</h3>
+				<div class="table-responsive">
+					<table class="table table-striped mt-5 text-center">
+						<thead>
+							<tr>
+								<th scope="col">Usuário</th>
+								<th scope="col">Bio</th>
+								<th scope="col">Seguindo</th>
+								<th scope="col">Seguidores</th>
+								<th scope="col">Usuário desde</th>
+								<th scope="col">Ação</th>
+							</tr>
+						</thead>
+						<tbody id="conteudo-resultado-usuario">
+							<tr>
+								<th id="login"></th>
+								<th id="bio"></th>
+								<th id="following"></th>
+								<th id="followers"></th>
+								<th id="created"></th>
+								<td id="actions">
+									<button class="btn btn-info" id="btn-repos-usuario">Repos</button>
+									<button class="btn btn-secondary" id="btn-starred-usuario">Starred</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div id="conteudo-resultado-pequisa-repos">
+			<div class="container mt-5 card pt-3 pb-3">
+				<h3 class="text-primary">Repositórios encontrados de <span id="usuario-github-repos" class="text-success"></span></h3>
+				<div class="table-responsive">
+					<table class="table table-striped mt-5 text-center">
+						<thead>
+							<tr>
+								<th scope="col">Name</th>
+								<th scope="col">Private</th>
+							</tr>
+						</thead>
+						<tbody id="conteudo-resultado-repos">
+
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div id="conteudo-resultado-pequisa-starred">
+			<div class="container mt-5 card pt-3 pb-3">
+				<h3 class="text-primary">Repositórios com estrela de <span id="usuario-github-starred" class="text-success"></span></h3>
+				<div class="table-responsive">
+					<table class="table table-striped mt-5 text-center">
+						<thead>
+							<tr>
+								<th scope="col">Dono</th>
+								<th scope="col">Nome</th>
+							</tr>
+						</thead>
+						<tbody id="conteudo-resultado-starred">
+
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</main>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="assets/js/allFunctions.js"></script>
+</body>
+</html>
